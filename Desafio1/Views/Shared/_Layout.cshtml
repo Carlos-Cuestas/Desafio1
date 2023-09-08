@@ -1,26 +1,29 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title - Desafio1</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+       
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary">
         <div class="container">
-            @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("Desafio 1", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    
+                    <li>@Html.ActionLink("Clientes", "Index", "Clientes", new { area = "" }, new { @class = "nav-link text-dark" })</li>
+                    <li>@Html.ActionLink("Pedidos", "Index", "Pedidoes", new { area = "" }, new { @class = "nav-link text-dark" })</li>
+                    <li>@Html.ActionLink("Sucursales", "Index", "Sucursals", new { area = "" }, new { @class = "nav-link text-dark" })</li>
+                    <li>@Html.ActionLink("Productos", "Index", "Productoes", new { area = "" }, new { @class = "nav-link text-dark" })</li>
                 </ul>
             </div>
         </div>
@@ -29,7 +32,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p>&copy; 2023/09/08 - Mi Desarrollo de Desafio 1 - CA201748 - Carlos Manuel Cuestas Aguiar</p>
         </footer>
     </div>
 

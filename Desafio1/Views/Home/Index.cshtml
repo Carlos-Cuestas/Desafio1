@@ -1,33 +1,38 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Menu";
 }
 
 <main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
+    <section class="row" aria-labelledby="aspnetTitle" >
+        <h1 id="title">Ejercicios</h1>
+        <p class="lead">*Usando Code First hacer los modelos para una Farmacia</p>
+        <p class="lead">*Agregar Validaciones Data Annotations</p>
+        <p class="lead">*Crear CRUD y Relaciones</p>
+        <p class="lead">*Cambiar diseño predeterminado de paguina y traducir a español</p>
 
+        <p><a href="https://www.udbvirtual.edu.sv/auladigital/pluginfile.php/1386273/mod_resource/content/1/Desafio01_DSE.pdf" class="btn btn-primary btn-md">Hoja de Examen &raquo;</a></p>
+    </section>
+    <hr />
     <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+        <section class="col-md-3 text-center">
+            <h2>Clientes</h2>
+            @Html.ActionLink("Consultar", "Index", "Clientes", new { area = "" }, new { @class = "btn btn-primary" })
         </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+        <section class="col-md-3 text-center">
+            <h2>Pedidos</h2>
+            @Html.ActionLink("Consultar", "Index", "Pedidoes", new { area = "" }, new { @class = "btn btn-primary" })
         </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+        <section class="col-md-3 text-center">
+            <h2>Sucursales</h2>
+            @Html.ActionLink("Consultar", "Index", "Sucursals", new { area = "" }, new { @class = "btn btn-primary" })
+        </section>
+
+        <section class="col-md-3 text-center">
+            <h2>Productos</h2>
+            @Html.ActionLink("Consultar", "Index", "Productoes", new { area = "" }, new { @class = "btn btn-primary" })
         </section>
     </div>
 </main>
