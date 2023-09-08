@@ -90,3 +90,4 @@ C:\Users\ccues\Desktop\Proyectos VS\Desafio1\Desafio1\bin\EntityFramework.xml
 C:\Users\ccues\Desktop\Proyectos VS\Desafio1\Desafio1\bin\EntityFramework.SqlServer.xml
 C:\Users\ccues\Desktop\Proyectos VS\Desafio1\Desafio1\obj\Debug\Desafio1.Migrations.tablaval.resources
 C:\Users\ccues\Desktop\Proyectos VS\Desafio1\Desafio1\obj\Debug\Desafio1.csproj.GenerateResource.cache
+C:\Users\ccues\Desktop\Proyectos VS\Desafio1\Desafio1\obj\Debug\Desafio1.Migrations.DataAnnotations.resources

@@ -139,6 +139,10 @@
     <Compile Include="Migrations\202309082137286_tablaval.designer.cs">
       <DependentUpon>202309082137286_tablaval.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309082339113_DataAnnotations.cs" />
+    <Compile Include="Migrations\202309082339113_DataAnnotations.designer.cs">
+      <DependentUpon>202309082339113_DataAnnotations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Pedido.cs" />
@@ -252,6 +256,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202309082137286_tablaval.resx">
       <DependentUpon>202309082137286_tablaval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309082339113_DataAnnotations.resx">
+      <DependentUpon>202309082339113_DataAnnotations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
