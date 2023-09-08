@@ -13,9 +13,5 @@ namespace Desafio1.Models
         public string Municipio { get; set; }
         public string Encargado { get; set; }
     }
-
-    public class SucursalDBContext : DbContext
-    {
-        public DbSet<Sucursal> Sucursales { get; set; }
-    }
+    
 }

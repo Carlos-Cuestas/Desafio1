@@ -12,7 +12,7 @@ namespace Desafio1.Controllers
 {
     public class ClientesController : Controller
     {
-        private ClienteDBContext db = new ClienteDBContext();
+        private RelacionDBContext db = new RelacionDBContext();
 
         // GET: Clientes
         public ActionResult Index()

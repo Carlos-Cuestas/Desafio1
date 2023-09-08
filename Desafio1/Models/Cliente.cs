@@ -13,8 +13,5 @@ namespace Desafio1.Models
         public string Apellido { get; set; }
         public DateTime FechaNacimiento { get; set; }
     }
-    public class ClienteDBContext : DbContext
-    {
-        public DbSet<Cliente> Clientes { get; set;}
-    }
+    
 }

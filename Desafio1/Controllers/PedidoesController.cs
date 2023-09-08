@@ -10,17 +10,18 @@ using Desafio1.Models;
 
 namespace Desafio1.Controllers
 {
-    public class PedidosController : Controller
+    public class PedidoesController : Controller
     {
-        private PedidoDBContext db = new PedidoDBContext();
+        private RelacionDBContext db = new RelacionDBContext();
 
-        // GET: Pedidos
+        // GET: Pedidoes
         public ActionResult Index()
         {
-            return View(db.Pedidos.ToList());
+            var pedidos = db.Pedidos.Include(p => p.clientes);
+            return View(pedidos.ToList());
         }
 
-        // GET: Pedidos/Details/5
+        // GET: Pedidoes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,18 +36,19 @@ namespace Desafio1.Controllers
             return View(pedido);
         }
 
-        // GET: Pedidos/Create
+        // GET: Pedidoes/Create
         public ActionResult Create()
         {
+            ViewBag.clienteid = new SelectList(db.Clientes, "Id", "Nombre");
             return View();
         }
 
-        // POST: Pedidos/Create
+        // POST: Pedidoes/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Fecha,Cliente,Monto,Total")] Pedido pedido)
+        public ActionResult Create([Bind(Include = "Id,Fecha,Monto,Total,clienteid")] Pedido pedido)
         {
             if (ModelState.IsValid)
             {
@@ -55,10 +57,11 @@ namespace Desafio1.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.clienteid = new SelectList(db.Clientes, "Id", "Nombre", pedido.clienteid);
             return View(pedido);
         }
 
-        // GET: Pedidos/Edit/5
+        // GET: Pedidoes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -70,15 +73,16 @@ namespace Desafio1.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.clienteid = new SelectList(db.Clientes, "Id", "Nombre", pedido.clienteid);
             return View(pedido);
         }
 
-        // POST: Pedidos/Edit/5
+        // POST: Pedidoes/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Fecha,Cliente,Monto,Total")] Pedido pedido)
+        public ActionResult Edit([Bind(Include = "Id,Fecha,Monto,Total,clienteid")] Pedido pedido)
         {
             if (ModelState.IsValid)
             {
@@ -86,10 +90,11 @@ namespace Desafio1.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.clienteid = new SelectList(db.Clientes, "Id", "Nombre", pedido.clienteid);
             return View(pedido);
         }
 
-        // GET: Pedidos/Delete/5
+        // GET: Pedidoes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +109,7 @@ namespace Desafio1.Controllers
             return View(pedido);
         }
 
-        // POST: Pedidos/Delete/5
+        // POST: Pedidoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

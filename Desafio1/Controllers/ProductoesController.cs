@@ -10,17 +10,17 @@ using Desafio1.Models;
 
 namespace Desafio1.Controllers
 {
-    public class ProductosController : Controller
+    public class ProductoesController : Controller
     {
-        private ProductoDBContext db = new ProductoDBContext();
+        private RelacionDBContext db = new RelacionDBContext();
 
-        // GET: Productos
+        // GET: Productoes
         public ActionResult Index()
         {
             return View(db.Productos.ToList());
         }
 
-        // GET: Productos/Details/5
+        // GET: Productoes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,13 +35,13 @@ namespace Desafio1.Controllers
             return View(producto);
         }
 
-        // GET: Productos/Create
+        // GET: Productoes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Productos/Create
+        // POST: Productoes/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +58,7 @@ namespace Desafio1.Controllers
             return View(producto);
         }
 
-        // GET: Productos/Edit/5
+        // GET: Productoes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace Desafio1.Controllers
             return View(producto);
         }
 
-        // POST: Productos/Edit/5
+        // POST: Productoes/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace Desafio1.Controllers
             return View(producto);
         }
 
-        // GET: Productos/Delete/5
+        // GET: Productoes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace Desafio1.Controllers
             return View(producto);
         }
 
-        // POST: Productos/Delete/5
+        // POST: Productoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

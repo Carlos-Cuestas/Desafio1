@@ -14,8 +14,5 @@ namespace Desafio1.Models
         public decimal PrecioVenta { get; set; }
     }
 
-    public class ProductoDBContext: DbContext
-    {
-        public DbSet<Producto> Productos { get; set;}
-    }
+    
 }

@@ -10,17 +10,17 @@ using Desafio1.Models;
 
 namespace Desafio1.Controllers
 {
-    public class SucursalesController : Controller
+    public class SucursalsController : Controller
     {
-        private SucursalDBContext db = new SucursalDBContext();
+        private RelacionDBContext db = new RelacionDBContext();
 
-        // GET: Sucursales
+        // GET: Sucursals
         public ActionResult Index()
         {
             return View(db.Sucursales.ToList());
         }
 
-        // GET: Sucursales/Details/5
+        // GET: Sucursals/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,13 +35,13 @@ namespace Desafio1.Controllers
             return View(sucursal);
         }
 
-        // GET: Sucursales/Create
+        // GET: Sucursals/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Sucursales/Create
+        // POST: Sucursals/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +58,7 @@ namespace Desafio1.Controllers
             return View(sucursal);
         }
 
-        // GET: Sucursales/Edit/5
+        // GET: Sucursals/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace Desafio1.Controllers
             return View(sucursal);
         }
 
-        // POST: Sucursales/Edit/5
+        // POST: Sucursals/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace Desafio1.Controllers
             return View(sucursal);
         }
 
-        // GET: Sucursales/Delete/5
+        // GET: Sucursals/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace Desafio1.Controllers
             return View(sucursal);
         }
 
-        // POST: Sucursales/Delete/5
+        // POST: Sucursals/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
